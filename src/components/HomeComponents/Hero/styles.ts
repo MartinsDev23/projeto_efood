@@ -4,7 +4,7 @@ import fundo from "../../../assets/images/fundo.svg";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1366px;
+  max-width: 100%;
   max-height: 2148px;
   margin: 0 auto;
   background-image: url(${fundo});

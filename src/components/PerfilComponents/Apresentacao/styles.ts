@@ -5,7 +5,7 @@ export const ApresentacaoContainer = styled.div`
   background-image: url(${imagemPerfil});
   background-repeat: no repeat;
   background-size: contain;
-  width: 1366px;
+  max-width: 100%;
   height: 280px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;

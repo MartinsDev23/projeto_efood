@@ -5,7 +5,7 @@ export const ListaDeProdutos = styled.div`
   margin: 0 auto;
   padding-top: 56px;
   padding-bottom: 120px;
-  width: 1366px;
+  max-width: 100%;
 `;
 
 export const Lista = styled.ul`

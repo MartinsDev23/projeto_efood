@@ -3,7 +3,7 @@ import fundoPerfil from '../../../assets/images/fundo-perfil.svg'
 
 export const HeaderContainer = styled.div`
   display: flex;
-  max-width: 1366px;
+  max-width: 100%;
   margin: 0 auto;
   background-image: url(${fundoPerfil});
   background-repeat: no repeat;

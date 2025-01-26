@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ListagemContainer = styled.div`
-  max-width: 1366px;
+  max-width: 100%;
   margin: 0 auto;
   padding-top: 80px;
   background-color: #fff9f2;
