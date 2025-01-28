@@ -23,6 +23,14 @@ export const ListaItem = styled.ul`
   position: relative;
   background-color: #fff;
   padding-bottom: 8px;
+  width: 475px;
+  height: 420px;
+
+  > img {
+    width: 475px;
+    height: 220px;
+    object-fit: cover;
+  }
 
   div {
     display: flex;
