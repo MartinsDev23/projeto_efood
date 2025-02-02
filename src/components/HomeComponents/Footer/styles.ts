@@ -10,7 +10,7 @@ export const FooterContainer = styled.div`
     background-color: #ffebd9;
 `
 
-export const LogoSecundario = styled(Logo)`
+export const SecondaryLogo = styled(Logo)`
     padding-top: 40px;
     padding-bottom: 32px;
 `
@@ -22,7 +22,7 @@ export const MediasContainer = styled.div`
     padding-bottom: 80px;
 `
 
-export const Texto = styled.p`
+export const Text = styled.p`
     color: #E66767;
     font-size: 10px;
     line-height: 12px;

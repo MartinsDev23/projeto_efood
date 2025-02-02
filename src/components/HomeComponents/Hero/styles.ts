@@ -20,7 +20,7 @@ export const Logo = styled.img`
   padding-top: 64px;
 `;
 
-export const Titulo = styled.h1`
+export const Title = styled.h1`
   text-align: center;
   max-width: 650px;
   padding-top: 140px;

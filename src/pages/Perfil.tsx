@@ -1,3 +1,4 @@
+import Cart from "../components/CartComponent";
 import Footer from "../components/HomeComponents/Footer";
 import Apresentacao from "../components/PerfilComponents/Apresentacao";
 import Header from "../components/PerfilComponents/Header";
@@ -8,6 +9,7 @@ const Perfil = () => {
   return (
     <>
       <EstiloGlobal />
+      <Cart />
       <Header />
       <Apresentacao />
       <Produtos />

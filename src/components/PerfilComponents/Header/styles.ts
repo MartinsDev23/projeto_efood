@@ -17,3 +17,15 @@ export const HeaderContainer = styled.div`
   line-height: 21px;
   align-items: center;
 `;
+
+export const BotaoCart = styled.button`
+  background-color: transparent;
+  color: #e66767;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+
+  &:hover {
+    cursor: pointer;
+  }
+`

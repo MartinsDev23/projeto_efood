@@ -37,19 +37,16 @@ const Apresentacao = () => {
       .then((data) => setPerfil(data));
   }, [id]);
 
-  if (!perfil) {
-    return <p>Restaurante não encontrado.</p>;
-    
+  if (perfil) {
+    return (
+      <div>
+        <ApresentacaoContainer backgroundImage={perfil.capa}>
+          <TipoRestaurante>{perfil.tipo}</TipoRestaurante>
+          <NomeRestaurante>{perfil.titulo}</NomeRestaurante>
+        </ApresentacaoContainer>
+      </div>
+    );
   }
-
-  return (
-    <div>
-      <ApresentacaoContainer backgroundImage={perfil.capa}>
-        <TipoRestaurante>{perfil.tipo}</TipoRestaurante>
-        <NomeRestaurante>{perfil.titulo}</NomeRestaurante>
-      </ApresentacaoContainer>
-    </div>
-  );
 };
 
 export default Apresentacao;
