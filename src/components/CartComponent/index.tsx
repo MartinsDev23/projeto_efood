@@ -77,7 +77,9 @@ const Cart = () => {
                       <p>Valor total</p>
                       <span>{formatPrice(getTotalPrice())}</span>
                     </Purchase>
-                    <BuyButton>Continuar com a entrega</BuyButton>
+                    <BuyButton marginTop={16} to="/entrega">
+                      Continuar com a entrega
+                    </BuyButton>
                   </>
                 ) : (
                   <EmptyCart>O carrinho está vazio</EmptyCart>

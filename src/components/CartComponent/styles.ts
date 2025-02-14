@@ -1,5 +1,11 @@
 import styled from "styled-components";
 import lixeira from "../../assets/images/lixeira-de-reciclagem 1.svg";
+import { Link } from "react-router-dom";
+
+type ButtonProps = {
+  marginTop: number;
+};
+
 export const CartOverlay = styled.div`
   position: fixed;
   content: "";
@@ -19,6 +25,10 @@ export const CartContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   overflow-y: scroll;
+
+  .disabled {
+    display: none;
+  }
 `;
 
 export const SideBar = styled.aside`
@@ -85,20 +95,24 @@ export const RemoveButton = styled.button`
   }
 `;
 
-export const BuyButton = styled.button`
-  margin-top: 16px;
+export const BuyButton = styled(Link)<ButtonProps>`
+  margin-top: ${(props) => (props.marginTop ? `${props.marginTop}px` : "100%")};
   width: 344px;
   padding: 4px 0;
   font-weight: bold;
   font-size: 14px;
+  line-height: 16px;
   color: #e66767;
   background-color: #ffebd9;
   border: none;
+  text-decoration: none;
+  text-align: center;
+  display: block;
 
   &:hover {
     cursor: pointer;
   }
-`
+`;
 
 export const Purchase = styled.div`
   margin-top: 40px;
@@ -114,7 +128,4 @@ export const EmptyCart = styled.p`
   font-weight: bold;
   font-size: 18px;
   color: #ffebd9;
-
-`
-
-
+`;

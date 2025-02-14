@@ -4,13 +4,21 @@ import fundo from "../../../assets/images/fundo.svg";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 100%;
+  width: 100%;
   max-height: 2148px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   background-image: url(${fundo});
-  background-repeat: no repeat;
-  background-size: contain;
+  background-repeat: repeat;
+  background-size: cover;
   align-items: center;
+
+  @media (max-width: 768px) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
 `;
 
 export const Logo = styled.img`
@@ -18,6 +26,10 @@ export const Logo = styled.img`
   display: block;
   margin: 0 auto;
   padding-top: 64px;
+
+  @media (max-width: 768px) {
+    width: 80px;
+  }
 `;
 
 export const Title = styled.h1`
@@ -29,4 +41,9 @@ export const Title = styled.h1`
   font-size: 36px;
   line-height: 42px;
   font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding-top: 40px;
+  }
 `;

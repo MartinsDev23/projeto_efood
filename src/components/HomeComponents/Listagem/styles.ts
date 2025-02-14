@@ -2,8 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const ListagemContainer = styled.div`
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
   padding-top: 80px;
   background-color: #fff9f2;
   padding-bottom: 120px;
@@ -15,6 +14,12 @@ export const Lista = styled.ul`
   margin: 0 auto;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
+
+  @media (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
 `;
 
 export const ListaItem = styled.ul`
@@ -23,11 +28,11 @@ export const ListaItem = styled.ul`
   position: relative;
   background-color: #fff;
   padding-bottom: 8px;
-  width: 475px;
-  height: 420px;
+  max-width: 475px;
+  max-height: 475px;
 
   > img {
-    width: 475px;
+    width: 100%;
     height: 220px;
     object-fit: cover;
   }
@@ -71,7 +76,6 @@ export const Botao = styled(Link)`
   }
 `;
 
-
 export const Tag = styled.span`
   padding: 4px 6px;
   background-color: #e66767;
@@ -84,7 +88,7 @@ export const Tag = styled.span`
   position: absolute;
   top: 16px;
   right: 16px;
-`
+`;
 
 export const TagDestaque = styled(Tag)`
   right: 100px;
