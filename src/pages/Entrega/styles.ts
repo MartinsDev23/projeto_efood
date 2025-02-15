@@ -15,6 +15,10 @@ export const Formulario = styled.form`
     margin-bottom: 24px;
     font-style: italic;
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const Texto = styled.h3`
@@ -41,6 +45,11 @@ export const CampoContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const BackButton = styled.button`
@@ -57,6 +66,10 @@ export const BackButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const SubmitButton = styled.button`
@@ -72,5 +85,9 @@ export const SubmitButton = styled.button`
 
   &:hover {
     cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;

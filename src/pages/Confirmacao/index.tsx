@@ -5,31 +5,31 @@ import {
   SideBar,
 } from "../../components/CartComponent/styles";
 import { EstiloGlobal } from "../../styles";
-import { SubmitButton, Texto } from "../Entrega/styles";
-import { Mensagem } from "./styles";
+import { Texto } from "../Entrega/styles";
+import { DoneButton, Mensagem } from "./styles";
 import { useDispatch, useSelector } from "react-redux";
-import { clear} from "../../store/reducers/cart";
+import { clear } from "../../store/reducers/cart";
 import { RootReducer } from "../../store";
 
 const Confirmacao = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { cartItems } = useSelector((state: RootReducer) => state.cart);
 
   const { orderId } = location.state || {};
 
   const clearCart = () => {
-    dispatch(clear())
-  }
+    dispatch(clear());
+  };
 
-  if (cartItems.length === 0){
-    return <Navigate to="/" />
-  } 
+  if (cartItems.length === 0) {
+    return <Navigate to="/" />;
+  }
 
   if (!orderId) {
     console.error("Informações de confirmação ausentes. Redirecionando...");
-    navigate("/"); 
+    navigate("/");
     return null;
   }
 
@@ -59,7 +59,7 @@ const Confirmacao = () => {
               Esperamos que desfrute de uma deliciosa e agradável experiência
               gastronômica. Bom apetite!
             </Mensagem>
-            <SubmitButton onClick={clearCart}>Concluir</SubmitButton>
+            <DoneButton onClick={clearCart}>Concluir</DoneButton>
           </SideBar>
         </CartContainer>
       </CartOverlay>

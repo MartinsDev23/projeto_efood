@@ -6,10 +6,14 @@ type ModalProps = {
 
 export const ListaDeProdutos = styled.div`
   background-color: #fff9f2;
-  margin: 0 auto;
   padding-top: 56px;
   padding-bottom: 120px;
-  max-width: 100%;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 `;
 
 export const Lista = styled.ul`
@@ -18,14 +22,33 @@ export const Lista = styled.ul`
   gap: 32px;
   width: 1024px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    width: 90%;
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin: 0;
+    place-items: center;
+  }
 `;
 export const ListaItem = styled.li`
   width: 320px;
-  height: 470px;
+  height: 450px;
   padding: 8px;
   background-color: #e66767;
   color: #ffebd9;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   h3 {
     padding-top: 8px;
@@ -46,17 +69,15 @@ export const Texto = styled.p`
 `;
 
 export const Botao = styled.button`
-  width: 300px;
+  width: 100%;
   font-weight: bold;
   text-align: center;
   font-size: 14px;
   color: #e66767;
   background-color: #ffebd9;
   border: none;
-  padding: 4px 0;
+  padding: 4px;
   line-height: 18px;
-  position: absolute;
-  bottom: 8px;
 
   &:hover {
     cursor: pointer;
@@ -83,11 +104,17 @@ export const ModalContainer = styled.div<ModalProps>`
   background-position: center;
   padding: 32px;
   width: 1024px;
-  height: 344px;
-  background-color: #E66767;
+  max-height: 344px;
+  background-color: #e66767;
   color: #fff;
   position: relative;
   display: flex;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+    padding: 12px;
+  }
 
   > img {
     width: 16px;
@@ -106,12 +133,23 @@ export const ModalContainer = styled.div<ModalProps>`
       width: 280px;
       height: 280px;
       object-fit: cover;
+
+      @media (max-width: 768px) {
+        width: 100%;
+        height: 50%;
+        display: none;
+      }
     }
   }
 
   .descricao {
     display: block;
     margin-left: 24px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0;
+    }
 
     h3 {
       font-size: 18px;
@@ -134,4 +172,4 @@ export const BotaoModal = styled(Botao)`
   font-size: 14px;
   line-height: 18px;
   position: relative;
-`
+`;

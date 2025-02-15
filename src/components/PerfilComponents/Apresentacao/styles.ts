@@ -31,6 +31,10 @@ export const TipoRestaurante = styled.span`
   position: absolute;
   left: 170px;
   top: 24px;
+
+  @media (max-width: 768px) {
+    left: 17px;
+  }
 `;
 export const NomeRestaurante = styled.h2`
   color: #fff;
@@ -40,4 +44,8 @@ export const NomeRestaurante = styled.h2`
   position: absolute;
   left: 170px;
   bottom: 32px;
+
+  @media (max-width: 768px) {
+    left: 17px;
+  }
 `;

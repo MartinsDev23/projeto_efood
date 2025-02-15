@@ -6,6 +6,7 @@ export const ListagemContainer = styled.div`
   padding-top: 80px;
   background-color: #fff9f2;
   padding-bottom: 120px;
+  align-items: center;
 `;
 
 export const Lista = styled.ul`
@@ -19,17 +20,29 @@ export const Lista = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
+    padding: 0 24px;
+  }
+
+  @media (max-width: 1023px) {
+    width: 90%;
+    gap: 40px;
   }
 `;
 
-export const ListaItem = styled.ul`
+export const ListaItem = styled.li`
   border: 1px solid #e66767;
   color: #e66767;
   position: relative;
   background-color: #fff;
   padding-bottom: 8px;
   max-width: 475px;
-  max-height: 475px;
+  max-height: 500px;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
   > img {
     width: 100%;

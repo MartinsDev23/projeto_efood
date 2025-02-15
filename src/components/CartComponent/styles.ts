@@ -40,6 +40,10 @@ export const SideBar = styled.aside`
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 768px) {
+    width: 70%;
+  }
+
   ul {
     margin-top: 32px;
     li {
@@ -73,6 +77,12 @@ export const SideBar = styled.aside`
         width: 80px;
         object-fit: cover;
         margin-right: 8px;
+      }
+
+      @media (max-width: 768px) {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 12px;
       }
     }
   }
@@ -112,6 +122,10 @@ export const BuyButton = styled(Link)<ButtonProps>`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const Purchase = styled.div`
@@ -122,6 +136,10 @@ export const Purchase = styled.div`
   font-weight: bold;
   font-size: 14px;
   color: #ffebd9;
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const EmptyCart = styled.p`

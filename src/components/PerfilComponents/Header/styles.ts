@@ -1,21 +1,38 @@
 import styled from "styled-components";
-import fundoPerfil from '../../../assets/images/fundo-perfil.svg'
+import fundoPerfil from "../../../assets/images/fundo-perfil.svg";
 
 export const HeaderContainer = styled.div`
   display: flex;
-  max-width: 100%;
-  margin: 0 auto;
+  width: 100%;
   background-image: url(${fundoPerfil});
-  background-repeat: no repeat;
+  background-repeat: repeat;
   background-size: contain;
   justify-content: center;
   gap: 340px;
   padding: 64px 0;
-  color: #E66767;
+  color: #e66767;
   font-weight: 900;
   font-size: 18px;
   line-height: 21px;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+
+    img {
+      margin-top: 18px;
+      margin-bottom: 18px;
+    }
+
+    span {
+      font-size: 22px;
+    }
+  }
+
+  @media (min-width: 769px) {
+    gap: 80px;
+  }
 `;
 
 export const BotaoCart = styled.button`
@@ -28,4 +45,4 @@ export const BotaoCart = styled.button`
   &:hover {
     cursor: pointer;
   }
-`
+`;
