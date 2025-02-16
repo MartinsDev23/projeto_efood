@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import InputMask from "react-input-mask";
 
 type CampoProps = {
   width?: number;
@@ -30,7 +31,7 @@ export const Texto = styled.h3`
   line-height: 18px;
 `;
 
-export const Campo = styled.input<CampoProps>`
+export const Campo = styled(InputMask)<CampoProps>`
   width: ${(props) => (props.width ? `${props.width}px` : "100%")};
   margin-top: 8px;
   margin-bottom: 8px;

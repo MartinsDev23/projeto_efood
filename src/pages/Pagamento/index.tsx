@@ -17,7 +17,8 @@ import {
   Texto,
 } from "../Entrega/styles";
 import { RootReducer } from "../../store";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { close } from "../../store/reducers/cart";
 
 const validationSchema = Yup.object({
   cardName: Yup.string().required("O nome no cartão é obrigatório"),
@@ -30,8 +31,11 @@ const validationSchema = Yup.object({
 const Pagamento = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const dispatch = useDispatch();
   const { deliveryData } = location.state || {};
-  const { cartItems } = useSelector((state: RootReducer) => state.cart);
+  const { cartItems, isVisible } = useSelector(
+    (state: RootReducer) => state.cart
+  );
   const [purchase, { isLoading, error }] = usePurchaseMutation();
 
   const formik = useFormik({
@@ -98,120 +102,151 @@ const Pagamento = () => {
     }, 0);
   };
 
+  const closeSideBar = (evento: React.MouseEvent) => {
+    if (evento.target === evento.currentTarget) {
+      navigate("/");
+      dispatch(close());
+    }
+  };
+
   return (
     <>
-      <EstiloGlobal />
-      <CartOverlay>
-        <CartContainer>
-          <SideBar>
-            <Formulario onSubmit={formik.handleSubmit}>
-              <Texto>
-                Pagamento - Valor a pagar{" "}
-                <span>{formatPrice(getTotalPrice())}</span>
-              </Texto>
-              <label htmlFor="cardName">Nome no cartão</label>
-              <Campo
-                type="text"
-                id="cardName"
-                name="cardName"
-                value={formik.values.cardName}
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                className={checkInputHasError("cardName") ? "error" : ""}
-              />
-              {formik.touched.cardName && formik.errors.cardName && (
-                <div className="error-message">{formik.errors.cardName}</div>
-              )}
-
-              <CampoContainer>
-                <div>
-                  <label htmlFor="cardNumber">Número do cartão</label>
+      {isVisible && (
+        <>
+          <EstiloGlobal />
+          <CartOverlay>
+            <CartContainer onClick={closeSideBar}>
+              <SideBar>
+                <Formulario onSubmit={formik.handleSubmit}>
+                  <Texto>
+                    Pagamento - Valor a pagar{" "}
+                    <span>{formatPrice(getTotalPrice())}</span>
+                  </Texto>
+                  <label htmlFor="cardName">Nome no cartão</label>
                   <Campo
                     type="text"
-                    id="cardNumber"
-                    name="cardNumber"
-                    width={228}
-                    value={formik.values.cardNumber}
+                    id="cardName"
+                    name="cardName"
+                    mask={""}
+                    value={formik.values.cardName}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    className={checkInputHasError("cardNumber") ? "error" : ""}
+                    className={checkInputHasError("cardName") ? "error" : ""}
                   />
-                  {formik.touched.cardNumber && formik.errors.cardNumber && (
+                  {formik.touched.cardName && formik.errors.cardName && (
                     <div className="error-message">
-                      {formik.errors.cardNumber}
+                      {formik.errors.cardName}
                     </div>
                   )}
-                </div>
-                <div>
-                  <label htmlFor="cardCVV">CVV</label>
-                  <Campo
-                    type="text"
-                    id="cardCVV"
-                    name="cardCVV"
-                    width={87}
-                    value={formik.values.cardCVV}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    className={checkInputHasError("cardCVV") ? "error" : ""}
-                  />
-                  {formik.touched.cardCVV && formik.errors.cardCVV && (
-                    <div className="error-message">{formik.errors.cardCVV}</div>
-                  )}
-                </div>
-              </CampoContainer>
 
-              <CampoContainer>
-                <div>
-                  <label htmlFor="expiryMonth">Mês de vencimento</label>
-                  <Campo
-                    type="text"
-                    id="expiryMonth"
-                    name="expiryMonth"
-                    width={155}
-                    value={formik.values.expiryMonth}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    className={checkInputHasError("expiryMonth") ? "error" : ""}
-                  />
-                  {formik.touched.expiryMonth && formik.errors.expiryMonth && (
-                    <div className="error-message">
-                      {formik.errors.expiryMonth}
+                  <CampoContainer>
+                    <div>
+                      <label htmlFor="cardNumber">Número do cartão</label>
+                      <Campo
+                        type="text"
+                        id="cardNumber"
+                        name="cardNumber"
+                        mask={"9999 9999 9999 9999"}
+                        width={228}
+                        value={formik.values.cardNumber}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className={
+                          checkInputHasError("cardNumber") ? "error" : ""
+                        }
+                      />
+                      {formik.touched.cardNumber &&
+                        formik.errors.cardNumber && (
+                          <div className="error-message">
+                            {formik.errors.cardNumber}
+                          </div>
+                        )}
                     </div>
-                  )}
-                </div>
-                <div>
-                  <label htmlFor="expiryYear">Ano de vencimento</label>
-                  <Campo
-                    type="text"
-                    id="expiryYear"
-                    name="expiryYear"
-                    width={155}
-                    value={formik.values.expiryYear}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    className={checkInputHasError("expiryYear") ? "error" : ""}
-                  />
-                  {formik.touched.expiryYear && formik.errors.expiryYear && (
-                    <div className="error-message">
-                      {formik.errors.expiryYear}
+                    <div>
+                      <label htmlFor="cardCVV">CVV</label>
+                      <Campo
+                        type="text"
+                        id="cardCVV"
+                        name="cardCVV"
+                        mask={"999"}
+                        width={87}
+                        value={formik.values.cardCVV}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className={checkInputHasError("cardCVV") ? "error" : ""}
+                      />
+                      {formik.touched.cardCVV && formik.errors.cardCVV && (
+                        <div className="error-message">
+                          {formik.errors.cardCVV}
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </CampoContainer>
+                  </CampoContainer>
 
-              <SubmitButton type="submit" disabled={isLoading}>
-                {isLoading ? "Finalizando pagamento..." : "Finalizar pagamento"}
-              </SubmitButton>
-            </Formulario>
-            <BackButton onClick={() => navigate(-1)}>
-              Voltar para a edição de endereço
-            </BackButton>
-            {error && (
-              <p>Ocorreu um erro durante o pagamento. Tente novamente.</p>
-            )}
-          </SideBar>
-        </CartContainer>
-      </CartOverlay>
+                  <CampoContainer>
+                    <div>
+                      <label htmlFor="expiryMonth">Mês de vencimento</label>
+                      <Campo
+                        type="text"
+                        id="expiryMonth"
+                        name="expiryMonth"
+                        mask={"99"}
+                        width={155}
+                        value={formik.values.expiryMonth}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className={
+                          checkInputHasError("expiryMonth") ? "error" : ""
+                        }
+                      />
+                      {formik.touched.expiryMonth &&
+                        formik.errors.expiryMonth && (
+                          <div className="error-message">
+                            {formik.errors.expiryMonth}
+                          </div>
+                        )}
+                    </div>
+                    <div>
+                      <label htmlFor="expiryYear">Ano de vencimento</label>
+                      <Campo
+                        type="text"
+                        id="expiryYear"
+                        name="expiryYear"
+                        mask={"99"}
+                        width={155}
+                        value={formik.values.expiryYear}
+                        onChange={formik.handleChange}
+                        onBlur={formik.handleBlur}
+                        className={
+                          checkInputHasError("expiryYear") ? "error" : ""
+                        }
+                      />
+                      {formik.touched.expiryYear &&
+                        formik.errors.expiryYear && (
+                          <div className="error-message">
+                            {formik.errors.expiryYear}
+                          </div>
+                        )}
+                    </div>
+                  </CampoContainer>
+
+                  <SubmitButton type="submit" disabled={isLoading}>
+                    {isLoading
+                      ? "Finalizando pagamento..."
+                      : "Finalizar pagamento"}
+                  </SubmitButton>
+                </Formulario>
+                <BackButton onClick={() => navigate(-1)}>
+                  Voltar para a edição de endereço
+                </BackButton>
+                {error && (
+                  <p>Ocorreu um erro durante o pagamento. Tente novamente.</p>
+                )}
+              </SideBar>
+            </CartContainer>
+          </CartOverlay>
+        </>
+      )}
     </>
   );
 };
