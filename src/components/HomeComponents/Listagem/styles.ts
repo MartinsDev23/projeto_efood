@@ -31,8 +31,8 @@ export const Lista = styled.ul`
 `;
 
 export const ListaItem = styled.li`
-  border: 1px solid #${colors.orange};
-  color: #${colors.orange};
+  border: 1px solid ${colors.orange};
+  color: ${colors.orange};
   position: relative;
   background-color: ${colors.white};
   padding-bottom: 8px;
@@ -78,7 +78,7 @@ export const ListaItem = styled.li`
 
 export const Botao = styled(Link)`
   padding: 4px 6px;
-  background-color: #${colors.orange};
+  background-color: ${colors.orange};
   color: ${colors.lightOrange};
   font-weight: bold;
   border: none;
@@ -92,7 +92,7 @@ export const Botao = styled(Link)`
 
 export const Tag = styled.span`
   padding: 4px 6px;
-  background-color: #${colors.orange};
+  background-color: ${colors.orange};
   color: ${colors.lightOrange};
   font-weight: bold;
   border: none;
