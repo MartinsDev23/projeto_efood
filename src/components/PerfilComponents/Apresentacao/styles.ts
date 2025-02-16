@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../../styles";
 
 type ApresentacaoProps = {
   backgroundImage: string;
@@ -17,7 +18,7 @@ export const ApresentacaoContainer = styled.div<ApresentacaoProps>`
   &::before {
     content: "";
     position: absolute;
-    background-color: #000;
+    background-color: ${colors.black};
     width: 100%;
     height: 100%;
     opacity: 0.5;
@@ -27,7 +28,7 @@ export const ApresentacaoContainer = styled.div<ApresentacaoProps>`
 export const TipoRestaurante = styled.span`
   font-size: 32px;
   line-height: 32px;
-  color: #fff;
+  color: ${colors.white};
   position: absolute;
   left: 170px;
   top: 24px;
@@ -37,7 +38,7 @@ export const TipoRestaurante = styled.span`
   }
 `;
 export const NomeRestaurante = styled.h2`
-  color: #fff;
+  color: ${colors.white};
   font-weight: bold;
   font-size: 32px;
   line-height: 38px;

@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import { colors } from "../../../styles";
 
 type ModalProps = {
   backgroundImage?: string;
 };
 
 export const ListaDeProdutos = styled.div`
-  background-color: #fff9f2;
+  background-color: ${colors.otherOrange};
   padding-top: 56px;
   padding-bottom: 120px;
   width: 100%;
@@ -39,8 +40,8 @@ export const ListaItem = styled.li`
   width: 320px;
   height: 450px;
   padding: 8px;
-  background-color: #e66767;
-  color: #ffebd9;
+  background-color: ${colors.orange};
+  color: ${colors.lightOrange};
   position: relative;
   display: flex;
   flex-direction: column;
@@ -73,8 +74,8 @@ export const Botao = styled.button`
   font-weight: bold;
   text-align: center;
   font-size: 14px;
-  color: #e66767;
-  background-color: #ffebd9;
+  color: ${colors.orange};
+  background-color: ${colors.lightOrange};
   border: none;
   padding: 4px;
   line-height: 18px;
@@ -105,8 +106,8 @@ export const ModalContainer = styled.div<ModalProps>`
   padding: 32px;
   width: 1024px;
   max-height: 344px;
-  background-color: #e66767;
-  color: #fff;
+  background-color: ${colors.orange};
+  color: ${colors.white};
   position: relative;
   display: flex;
 

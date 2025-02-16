@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { Logo } from "../Hero/styles";
+import { colors } from "../../../styles";
 
 export const FooterContainer = styled.div`
     width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: #ffebd9;
+    background-color: ${colors.lightOrange};
 `
 
 export const SecondaryLogo = styled(Logo)`
@@ -22,7 +23,7 @@ export const MediasContainer = styled.div`
 `
 
 export const Text = styled.p`
-    color: #E66767;
+    color: ${colors.orange};
     font-size: 10px;
     line-height: 12px;
     font-weight: 400;

@@ -9,3 +9,11 @@ export const EstiloGlobal = createGlobalStyle`
         list-style: none;
     }
 `;
+
+export const colors = {
+  orange: " #e66767",
+  lightOrange: "#ffebd9",
+  otherOrange: "#fff9f2",
+  white: "#fff",
+  black: "#000"
+};

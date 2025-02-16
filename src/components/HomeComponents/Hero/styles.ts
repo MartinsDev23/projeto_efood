@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import fundo from "../../../assets/images/fundo.svg";
+import { colors } from "../../../styles";
 
 export const Container = styled.div`
   display: flex;
@@ -37,7 +38,7 @@ export const Title = styled.h1`
   max-width: 650px;
   padding-top: 140px;
   padding-bottom: 40px;
-  color: #e66767;
+  color: ${colors.orange};
   font-size: 36px;
   line-height: 42px;
   font-weight: bold;

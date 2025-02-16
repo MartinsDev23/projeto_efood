@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import fundoPerfil from "../../../assets/images/fundo-perfil.svg";
+import { colors } from "../../../styles";
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export const HeaderContainer = styled.div`
   justify-content: center;
   gap: 340px;
   padding: 64px 0;
-  color: #e66767;
+  color: ${colors.orange};
   font-weight: 900;
   font-size: 18px;
   line-height: 21px;
@@ -37,7 +38,7 @@ export const HeaderContainer = styled.div`
 
 export const BotaoCart = styled.button`
   background-color: transparent;
-  color: #e66767;
+  color: ${colors.orange};
   border: none;
   font-weight: bold;
   font-size: 18px;

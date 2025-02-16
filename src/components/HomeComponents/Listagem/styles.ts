@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { colors } from "../../../styles";
 
 export const ListagemContainer = styled.div`
   width: 100%;
   padding-top: 80px;
-  background-color: #fff9f2;
+  background-color: ${colors.otherOrange};
   padding-bottom: 120px;
   align-items: center;
 `;
@@ -30,10 +31,10 @@ export const Lista = styled.ul`
 `;
 
 export const ListaItem = styled.li`
-  border: 1px solid #e66767;
-  color: #e66767;
+  border: 1px solid #${colors.orange};
+  color: #${colors.orange};
   position: relative;
-  background-color: #fff;
+  background-color: ${colors.white};
   padding-bottom: 8px;
   max-width: 475px;
   max-height: 500px;
@@ -77,8 +78,8 @@ export const ListaItem = styled.li`
 
 export const Botao = styled(Link)`
   padding: 4px 6px;
-  background-color: #e66767;
-  color: #ffebd9;
+  background-color: #${colors.orange};
+  color: ${colors.lightOrange};
   font-weight: bold;
   border: none;
   margin: 8px;
@@ -91,8 +92,8 @@ export const Botao = styled(Link)`
 
 export const Tag = styled.span`
   padding: 4px 6px;
-  background-color: #e66767;
-  color: #ffebd9;
+  background-color: #${colors.orange};
+  color: ${colors.lightOrange};
   font-weight: bold;
   border: none;
   margin: 0 8px;

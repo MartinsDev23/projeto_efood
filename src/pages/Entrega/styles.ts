@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import InputMask from "react-input-mask";
+import { colors } from "../../styles";
 
 type CampoProps = {
   width?: number;
@@ -7,7 +8,7 @@ type CampoProps = {
 
 export const Formulario = styled.form`
   width: 344px;
-  color: #ffebd9;
+  color: ${colors.lightOrange};
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
@@ -25,7 +26,7 @@ export const Formulario = styled.form`
 export const Texto = styled.h3`
   font-weight: bold;
   font-size: 16px;
-  color: #ffebd9;
+  color: ${colors.lightOrange};
   margin-top: 32px;
   margin-bottom: 16px;
   line-height: 18px;
@@ -36,7 +37,7 @@ export const Campo = styled(InputMask)<CampoProps>`
   margin-top: 8px;
   margin-bottom: 8px;
   padding: 8px;
-  background-color: #ffebd9;
+  background-color: ${colors.lightOrange};
   border: none;
   display: flex;
 `;
@@ -60,8 +61,8 @@ export const BackButton = styled.button`
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
-  color: #e66767;
-  background-color: #ffebd9;
+  color: ${colors.orange};
+  background-color: ${colors.lightOrange};
   border: none;
 
   &:hover {
@@ -80,8 +81,8 @@ export const SubmitButton = styled.button`
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
-  color: #e66767;
-  background-color: #ffebd9;
+  color: ${colors.orange};
+  background-color: ${colors.lightOrange};
   border: none;
 
   &:hover {

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import lixeira from "../../assets/images/lixeira-de-reciclagem 1.svg";
 import { Link } from "react-router-dom";
+import { colors } from "../../styles";
 
 type ButtonProps = {
   marginTop: number;
@@ -34,7 +35,7 @@ export const CartContainer = styled.div`
 export const SideBar = styled.aside`
   height: 100vh;
   width: 360px;
-  background-color: #e66767;
+  background-color: ${colors.orange};
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -50,21 +51,21 @@ export const SideBar = styled.aside`
       display: flex;
       width: 344px;
       height: 100px;
-      background-color: #ffebd9;
+      background-color: ${colors.lightOrange};
       margin-bottom: 16px;
       padding-top: 8px;
       padding-left: 8px;
       position: relative;
 
       h3 {
-        color: #e66767;
+        color: ${colors.orange};
         font-weight: bold;
         font-size: 18px;
         line-height: 21px;
       }
 
       p {
-        color: #e66767;
+        color: ${colors.orange};
         font-weight: 400;
         font-size: 14px;
         line-height: 22px;
@@ -98,7 +99,7 @@ export const RemoveButton = styled.button`
   position: absolute;
   right: 8px;
   bottom: 8px;
-  background-color: #ffebd9;
+  background-color: ${colors.lightOrange};
 
   &:hover {
     cursor: pointer;
@@ -112,8 +113,8 @@ export const BuyButton = styled(Link)<ButtonProps>`
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
-  color: #e66767;
-  background-color: #ffebd9;
+  color: ${colors.orange};
+  background-color: ${colors.lightOrange};
   border: none;
   text-decoration: none;
   text-align: center;
@@ -135,7 +136,7 @@ export const Purchase = styled.div`
   justify-content: space-between;
   font-weight: bold;
   font-size: 14px;
-  color: #ffebd9;
+  color: ${colors.lightOrange};
 
   @media (max-width: 768px) {
     width: 90%;
@@ -145,5 +146,5 @@ export const Purchase = styled.div`
 export const EmptyCart = styled.p`
   font-weight: bold;
   font-size: 18px;
-  color: #ffebd9;
+  color: ${colors.lightOrange};
 `;
