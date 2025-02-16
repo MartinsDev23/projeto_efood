@@ -11,7 +11,7 @@ import estrela from "../../../assets/images/star_favorite.svg";
 import { useEffect, useState } from "react";
 
 export interface Restaurante {
-  cardapio: string;
+  cardapio: [];
   id: number;
   titulo: string;
   descricao: string;
